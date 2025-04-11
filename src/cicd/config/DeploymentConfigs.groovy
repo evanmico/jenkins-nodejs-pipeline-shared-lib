@@ -1,0 +1,5 @@
+package cicd
+
+class DeploymentConfigs {
+    
+}
