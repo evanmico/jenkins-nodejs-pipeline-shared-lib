@@ -1,6 +1,6 @@
 import cicd.config.DeploymentConfigs
 
-public void call(String repositoryName, String sourceBranch, String credentialsId = 'github-token') {
+public void call(String repositoryName, String sourceBranch) {
     // Check if sourceBranch empty
     if (!sourceBranch) {
         error("Source branch for git clone is '${sourceBranch}'") // fails if empty and shows the value
@@ -13,7 +13,7 @@ public void call(String repositoryName, String sourceBranch, String credentialsI
             branches: [[name: "refs/heads/${sourceBranch}"]],
             extensions: [],
             userRemoteConfigs: [[
-                credentialsId: credentialsId,
+                credentialsId: 'github-token',
                 url: gitUrl
             ]]
         ),
