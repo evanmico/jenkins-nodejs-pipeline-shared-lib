@@ -1,2 +1,4 @@
 git: 
   remoteHttps: https://github.com/CrystalCoasts/<REPOSITORY_NAME>.git
+cicdConfig:
+  pipelineConfigFolderPath: cicd/pipeline-config
