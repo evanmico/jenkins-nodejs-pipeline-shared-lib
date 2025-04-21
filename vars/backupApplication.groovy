@@ -18,6 +18,7 @@ public void call(Map attrs = [:]) {
         final GString backupZipFileName = "backup-${env.b_PROJECT_NAME}-${env.BUILD_NUMBER}.zip"
         final GString backupZipFilePath = "${backupDirectoryPath}/${backupZipFileName}"
 
+        sh(script: "sudo chmod g+u ${sourcePath}/.env", label: 'edit .env perms')
         sh(script: "zip -q -r -9 ${backupZipFilePath} ${sourcePath}", label: 'zip application')
         echo("Current application was backed up in '${backupZipFilePath}'")
     }
