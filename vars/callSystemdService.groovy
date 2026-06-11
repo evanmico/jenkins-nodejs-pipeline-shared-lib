@@ -12,12 +12,12 @@ public void call(Map attrs = [:]) {
     switch (command) {
         case 'stop':
             systemdService.stopService()
-            sleep(time: 5, unit: 'SECONDS')
+            sleep(time: 15, unit: 'SECONDS')
             _assertServiceStatus(systemdService, 'stopped')
             break
         case 'start':
             systemdService.startService()
-            sleep(time: 5, unit: 'SECONDS')
+            sleep(time: 15, unit: 'SECONDS')
             _assertServiceStatus(systemdService, 'started')
             break
         default:
